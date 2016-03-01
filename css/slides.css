@@ -3,7 +3,7 @@
 #slidemap{
  width: 50%;
     height: 40%;
-    background-color: #00D3B7;
+
 }
 
 #restaurant_img{
@@ -11,15 +11,27 @@
     height: 20%;
     background-color: beige;
 }
+
+#restaurant_img img{
+    height: 100%;
+    width: 100%;
+}
+
+
 #restaurant_info{
     width: 50%;
     height: 40%;
+    background-color: #FFFFFF;
+}
 
-    background-color: #46b8da;
+.container{
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 60%;
 }
 
 #slides_varia{
     width: 50%;
     height: 40%;
-    background-color: #ac2925;
+    background-color: #FFFFFF;
 }

@@ -159,5 +159,9 @@ include('assets/php/Functions.php');
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
+		  <!-- google maps api -->
+		  <script src="assets/js/googleMaps.js" ></script>
+		  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+				  async defer></script>
 	</body>
 </html>

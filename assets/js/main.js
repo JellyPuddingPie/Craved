@@ -436,9 +436,30 @@ var main = (function($) { var _ = {
 								'<div class="caption"></div>' +
 								'<div class="image"></div>' +
 								'<div  id="slidemap">MAP</div>' +
-								'<div  id="restaurant_img">restaurant image</div>' +
-								'<div  id="restaurant_info">restaurant info</div>' +
-								'<div id="slides_varia">slides varia</div>' +
+								'<div  id="restaurant_img"><img src="images/Inside-the-restaurant.jpg" /></div>' +
+								'<div  id="restaurant_info">' +
+								'<div class="container">' +
+								'<h3>Restaurant</h3>' +
+								'<p>fictionele laan 4 droomland</p>' +
+								'<table>' +
+								'<tr><td>Maandag: </td><td>10:30 - 17:30</td></tr>' +
+								'<tr><td>Dinsdag: </td><td>10:30 - 17:30</td></tr>' +
+								'<tr><td>Woensdag: </td><td>10:30 - 17:30</td></tr>' +
+								'<tr><td>Donderdag: </td><td>10:30 - 17:30</td></tr>' +
+								'<tr><td>Vrijdag: </td><td>10:30 - 17:30</td></tr>' +
+								'<tr><td>Zaterdag: </td><td>Gesloten</td></tr>' +
+								'<tr><td>Zondag: </td><td>Gesloten</td></tr>' +
+								'</table>' +
+								'</div>' +
+								'</div>' +
+								'<div id="slides_varia">' +
+								'<div class="container">' +
+								'<h3>Varia</h3>' +
+								'<p>Consulted he eagerness unfeeling deficient existence of. Calling nothing end' +
+								' fertile for venture way boy. Esteem spirit temper too say adieus who direct esteem. It esteems' +
+								' luckily mr or picture placing drawing no. Apartments frequently or motionless on reasonable projecting expression. Way mrs end gave tall walk fact bed. </p>' +
+								'</div>' +
+								'</div>' +
 								'</div>');
 
 	 					// Image.
