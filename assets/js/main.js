@@ -42,7 +42,7 @@ var main = (function($) { var _ = {
 	$body: null,
 
 	/**
-	 * Main wrapper.
+	 * Main wrapper.f
 	 * @var {jQuery}
 	 */
 	$main: null,
@@ -436,9 +436,9 @@ var main = (function($) { var _ = {
 								'<div class="caption"></div>' +
 								'<div class="image"></div>' +
 								'<div  id="slidemap">MAP</div>' +
-								'<div  id="restaurant_img"></div>' +
-								'<div  id="restaurant_info"></div>' +
-								'<div id="slides_varia"></div>' +
+								'<div  id="restaurant_img">restaurant image</div>' +
+								'<div  id="restaurant_info">restaurant info</div>' +
+								'<div id="slides_varia">slides varia</div>' +
 								'</div>');
 
 	 					// Image.

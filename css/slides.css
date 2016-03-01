@@ -2,27 +2,24 @@
 
 #slidemap{
  width: 50%;
-    height: 50%;
-    float: left;
+    height: 40%;
     background-color: #00D3B7;
 }
 
 #restaurant_img{
     width: 100%;
-    height: 10%;
-    float: left;
-    background-color: darkorchid;
+    height: 20%;
+    background-color: beige;
 }
 #restaurant_info{
     width: 50%;
     height: 40%;
-    float: left;
+
     background-color: #46b8da;
 }
 
 #slides_varia{
     width: 50%;
     height: 40%;
-    float: left;
     background-color: #ac2925;
 }

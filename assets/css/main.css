@@ -1094,19 +1094,24 @@
 				#viewer .slide .caption h2, #viewer .slide .caption h3, #viewer .slide .caption h4, #viewer .slide .caption h5, #viewer .slide .caption h6 {
 					color: #fff;
 				}
-
-			#viewer .slide .image {
+#viewer .slide .image{
+	width: 50%;
+	height: 40%;
+}
+			#viewer .slide .image, #viewer .slide #slidemap,  #viewer .slide #restaurant_img,
+			#viewer .slide #restaurant_info,  #viewer .slide #slides_varia
+			{
 				-moz-transition: opacity 0.5s ease-in-out;
 				-webkit-transition: opacity 0.5s ease-in-out;
 				-ms-transition: opacity 0.5s ease-in-out;
 				transition: opacity 0.5s ease-in-out;
 				float:left;
-				width: 50%;
-				height: 50%;
 				background-repeat: no-repeat;
 				background-size: cover;
 				opacity: 0;
 			}
+
+
 
 			#viewer .slide:before {
 				-moz-animation: spinner 1s linear infinite;
@@ -1133,12 +1138,17 @@
 			}
 
 			#viewer .slide.loading:before {
+				opacity:  1;
+			}
+
+			#viewer .slide.active .image ,  #viewer .slide.active #slidemap,
+			#viewer .slide.active #restaurant_info, #viewer .slide.active #restaurant_img,
+			#viewer .slide.active #slides_varia
+			{
 				opacity: 1;
 			}
 
-			#viewer .slide.active .image {
-				opacity: 1;
-			}
+
 
 		body.fullscreen #viewer {
 			width: 100%;
