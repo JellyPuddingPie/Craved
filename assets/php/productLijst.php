@@ -13,11 +13,11 @@ foreach($objecten as $thumbnail){
     
   
     echo '
-	<article>
-							<a class="thumbnail" href="'. $foto .'" data-position="left center"><img src="'. $foto .'" alt="" /></a>
-							<h2>Diam tempus accumsan</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-						</article>
+	                <article>
+					<a class="thumbnail" href="'. $foto .'" data-position="left center"><img src="'. $foto .'" alt="" /></a>
+					<h2>Diam tempus accumsan</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+				    </article>
 ';
     
 
