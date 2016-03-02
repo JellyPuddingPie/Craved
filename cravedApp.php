@@ -16,6 +16,8 @@ include('assets/php/Functions.php');
         
          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/cravedCustom.css"/>
+		<link rel="stylesheet" href="css/slides.css"/>f
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         
@@ -157,5 +159,9 @@ include('assets/php/Functions.php');
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
 			<script src="assets/js/main.js"></script>
 
+		  <!-- google maps api -->
+		  <script src="assets/js/googleMaps.js" ></script>
+		  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+				  async defer></script>
 	</body>
 </html>

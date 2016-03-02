@@ -47,6 +47,7 @@ include ('login/authorize.php');
 	</div>
 </body>
 
+
 <script>
 	$(document).ready(function () {
     	$('#logo').addClass('animated fadeInDown');
@@ -64,6 +65,7 @@ include ('login/authorize.php');
 	$('#password').blur(function() {
 		$('label[for="password"]').removeClass('selected');
 	});
+
 </script>
 
 </html>
