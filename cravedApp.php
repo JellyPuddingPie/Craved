@@ -16,11 +16,13 @@ include('assets/php/Functions.php');
         
          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/cravedCustom.css"/>
-		<link rel="stylesheet" href="css/slides.css"/>f
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        
+		<link rel="stylesheet" href="css/slides.css"/>
+		<link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+		<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="upload.js">
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<script type="text/javascript">
 				 function updateRangeOutput(val) {
@@ -114,12 +116,47 @@ include('assets/php/Functions.php');
   </div>
   <div id="menu2" class="tab-pane fade">
     <h3>Upload</h3>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
-    <label>Select image to upload:</label>
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="upload">
-</form>
-  </div>
+	  <label>Select the restaurant:</label>
+	  <input id="pac-input" class="controls" type="text"
+			 placeholder="Enter a location">
+
+	  <div id="mapupload"></div>
+	  <form action="upload.php" method="post" enctype="multipart/form-data">
+		  <label>Select image to upload:</label>
+		  <input type='file' name="fileToUpload" onchange="readURL(this);" /><br/>
+		  <img id="preview" src="#" alt="your image" /><br/>
+
+
+
+		  <input type="hidden" name="restname" id="restname" required="required">
+
+		  <input type="hidden" name="address" id="address">
+
+		  <input type="hidden" name="nr" id="nr">
+
+		  <input type="hidden" name="city" id="city">
+
+		  <input type="hidden" name="site" id="site">
+		  <br/>
+		  Prijs
+		  <input type="text" name="prijs" id="prijs">
+		  <br/>
+		  <input type="checkbox" name="etenstype[]" value="1">Vlees
+		  <br/>
+		  <input type="checkbox" name="etenstype[]" value="2">Vis
+		  <br/>
+		  <input type="checkbox" name="etenstype[]" value="3">Vegetarisch
+		  <br/>
+		  <input type="checkbox" name="etenstype[]" value="4">Glutenvrij
+		  <br/>
+		  <input type="checkbox" name="etenstype[]" value="5">Suikervrij
+		  <br/>
+
+
+		  <input type="submit" value="Upload Image" name="upload">
+	  </form>
+
+	  </div>
      <div id="menu3" class="tab-pane fade">
     <h3>Help</h3>
     <p>
@@ -160,8 +197,10 @@ include('assets/php/Functions.php');
 			<script src="assets/js/main.js"></script>
 
 		  <!-- google maps api -->
-		  <script src="assets/js/googleMaps.js" ></script>
-		  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+		<!-- <script src="assets/js/googleMaps.js" ></script>-->
+
+		  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhqkAKpD--AOj1Avg_2-XM1e0risMDoOw&libraries=places&callback=initMap2"
 				  async defer></script>
+
 	</body>
 </html>
