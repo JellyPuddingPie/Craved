@@ -435,8 +435,13 @@ var main = (function($) { var _ = {
 	 						s.$slide = $('<div class="slide">' +
 								'<div class="caption"></div>' +
 								'<div class="image"></div>' +
-								'<div  id="slidemap">MAP</div>' +
-								'<div  id="restaurant_img"><img src="images/Inside-the-restaurant.jpg" /></div>' +
+								'<div  id="slidemap"><div class="wrapper">' +
+								'' +
+								'</div></div>' +
+								'<div  id="restaurant_img">' +
+								'<div class="wrapper">' +
+								'<img src="images/Inside-the-restaurant.jpg" /></div>' +
+								'</div>' +
 								'<div  id="restaurant_info">' +
 								'<div class="container">' +
 								'<h3>Restaurant</h3>' +
