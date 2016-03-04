@@ -1,5 +1,6 @@
 <?php
-session_start();
+include("../cravedApp.php");
+$curr_id = $user_id;
 $username = "bjorngv155";
 $password = "7gc7e3qn";
 $dbh = new PDO('mysql:host=46.21.173.249;dbname=bjorngv155_Craved', $username, $password);
@@ -126,7 +127,7 @@ if ($uploadOk == 0) {
 		
 		$dbh=null;
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-		header('Location: ../cravedApp.php');
+		
     } else {
         echo "Sorry, there was an error uploading your file.";
     }

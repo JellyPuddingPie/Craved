@@ -1,16 +1,34 @@
-
+ #content-left{
+		  width: 40%;
+    float: left;
+    margin-left: 20px;
+    font-size: 15px;
+	  }
+	  #content-right{
+		 height:350px;
+	  }
       #map {
         height: 300px;
 		width:400px;
 		float:left;
 		
       }
+	  .uploadbutton{
+		      border: 1px solid #FBC473;
+    color: #FBC473;
+	  }
 	  #prijs{
-		  width:55px;
+		  width:65px;
+		  float:left;
 	  }
 	  #preview{
 		  visibility: hidden;
 	  }
+	  #content{
+		  font-family:Tahoma;
+		  padding-left:10px;
+	  }
+	 
       .controls {
         margin-top: 10px;
         border: 1px solid transparent;

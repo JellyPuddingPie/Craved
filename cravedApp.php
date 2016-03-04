@@ -2,6 +2,8 @@
 session_start();
 include('login/session.php');
 include('assets/php/Functions.php');
+$user_id = $session_user_id;
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -92,7 +94,7 @@ include('assets/php/Functions.php');
 			<li class="active"><a data-toggle="pill" class="custompill" href="#menu0">Account</a></li>
 			<li><a data-toggle="pill" class="custompill" href="#menu1">Filters</a></li>
 			</br>
-			<li><a data-toggle="pill" class="custompill" onclick="$(this).openModal('upload/index.php', 'upload/style.css', 'upload')">Upload</a></li>
+			<li><a data-toggle="pill" class="custompill" onclick="$(this).openModal('upload/index.php', 'upload/style.css', 'Zet jou gerecht op Craved')">Upload</a></li>
 			<li><a data-toggle="pill" class="custompill" href="#menu3">Help</a></li>
 		</ul>
 
@@ -113,8 +115,13 @@ include('assets/php/Functions.php');
 			<h1><button type="submit" style="font-size:25px;">Filteren</button></h1>
 	</form>
   </div>
+  <div id="menu3" class="tab-pane fade">
+	  
+    <h3>Help</h3>
+
+  </div>
   <div id="menu2" class="tab-pane fade">
-	  <button </button>
+	  
     <h3>Upload</h3>
 
   </div>
