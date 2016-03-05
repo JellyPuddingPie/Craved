@@ -1,6 +1,4 @@
 <?php
-include("../cravedApp.php");
-$curr_id = $user_id;
 $username = "bjorngv155";
 $password = "7gc7e3qn";
 $dbh = new PDO('mysql:host=46.21.173.249;dbname=bjorngv155_Craved', $username, $password);
@@ -19,43 +17,37 @@ $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 if(isset($_POST["upload"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
-        echo "File is not an image.";
         $uploadOk = 0;
     }
 }
 // Check if file already exists
 if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
     $uploadOk = 0;
 }
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 500000) {
-    echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 && $imageFileType != "gif" ) {
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
     $uploadOk = 0;
 }
 
 if(isset($_POST['etenstype'])){
 		 $etenstype = $_POST['etenstype'];
 	 }else{
-		 echo "geen etenstype";
 		 $uploadOk = 0;
 	 }
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
 } else {
 	$city = $_POST["city"];
 	$site = $_POST["site"];
+	$user_id = $_POST["userid"];
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 		
 		
@@ -65,7 +57,7 @@ if ($uploadOk == 0) {
 		$row = $stmt1->fetch();
 		$row_count = $stmt1->rowCount();
 		
-		$session_user_id = 1;
+
 		
 		$prijs = $_POST["prijs"];
 		
@@ -77,7 +69,7 @@ if ($uploadOk == 0) {
 			$stmt = $dbh->prepare("INSERT INTO fotos (media_extensie, media_prijsklasse, user_id, restaurant_id)  VALUES (?,?,?,?)");
 			$stmt->bindParam(1,$ext);
 			$stmt->bindParam(2, $prijs);
-			$stmt->bindParam(3,$session_user_id);
+			$stmt->bindParam(3,$user_id);
 			$stmt->bindParam(4,$rest_id);
 			$stmt->execute();
 			
@@ -110,7 +102,7 @@ if ($uploadOk == 0) {
 			$stmt = $dbh->prepare("INSERT INTO fotos (media_extensie, media_prijsklasse, user_id, restaurant_id)  VALUES (?,?,?,?)");
 			$stmt->bindParam(1,$ext);
 			$stmt->bindParam(2, $prijs);
-			$stmt->bindParam(3,$session_user_id);
+			$stmt->bindParam(3,$user_id);
 			$stmt->bindParam(4,$rest_id);
 			$stmt->execute();
 			//etenstypes per foto in DB toevoegen
@@ -126,10 +118,9 @@ if ($uploadOk == 0) {
 		}
 		
 		$dbh=null;
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
+		header('Location: ../cravedApp.php');
 		
     } else {
-        echo "Sorry, there was an error uploading your file.";
     }
 }
 ?>
