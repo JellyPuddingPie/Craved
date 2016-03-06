@@ -5,7 +5,7 @@ $servername = "46.21.173.249";
 $username = "bjorngv155";
 $password = "7gc7e3qn";
 $dbname = "bjorngv155_Craved";
-$dbh = new PDO('mysql:host=46.21.173.249;dbname=bjorngv155_Craved', $username, $password);
+$dbh = new PDO('mysql:host=localhost;dbname=bjorngv155_Craved', $username, $password);
 
 
 if(isset($_POST['login'])){

@@ -16,7 +16,8 @@ include('assets/php/Functions.php');
         
          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/cravedCustom.css"/>
-		<link rel="stylesheet" href="css/slides.css"/>f
+		<link rel="stylesheet" href="css/slides.css"/>
+		<link rel="stylesheet" href="css/modal.css"/>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -91,7 +92,7 @@ include('assets/php/Functions.php');
 			<li class="active"><a data-toggle="pill" class="custompill" href="#menu0">Account</a></li>
 			<li><a data-toggle="pill" class="custompill" href="#menu1">Filters</a></li>
 			</br>
-			<li><a data-toggle="pill" class="custompill" href="#menu2">Upload</a></li>
+			<li><a data-toggle="pill" class="custompill" onclick="$(this).openModal('upload/index.php', 'upload/style.css', 'upload')">Upload</a></li>
 			<li><a data-toggle="pill" class="custompill" href="#menu3">Help</a></li>
 		</ul>
 
@@ -113,26 +114,9 @@ include('assets/php/Functions.php');
 	</form>
   </div>
   <div id="menu2" class="tab-pane fade">
+	  <button </button>
     <h3>Upload</h3>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
-    <label>Select image to upload:</label>
-    <input type="file" name="fileToUpload" id="fileToUpload">
-    <input type="submit" value="Upload Image" name="upload">
-</form>
-  </div>
-     <div id="menu3" class="tab-pane fade">
-    <h3>Help</h3>
-    <p>
-        <label name="onderwerp">Onderwerp</label>
-         <form id="contactForm" method="post" action="mail/Contact.php">
-             <input type="text" name="onderwerp"/>
-             
-         
-             <label name="bericht">Bericht</label>
-            <input type="textarea" name="bericht"/>
 
-             <h1> <button type="submit">Send</button></h1>
-         </form></p>
   </div>
     
 </div>
@@ -161,7 +145,10 @@ include('assets/php/Functions.php');
 
 		  <!-- google maps api -->
 		  <script src="assets/js/googleMaps.js" ></script>
-		  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+		  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDhqkAKpD--AOj1Avg_2-XM1e0risMDoOw&callback=initMap"
 				  async defer></script>
+
+			<!-- modal js -->
+			<script src="assets/js/modal.js"></script>
 	</body>
 </html>

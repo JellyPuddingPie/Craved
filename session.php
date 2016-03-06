@@ -27,6 +27,6 @@ file_put_contents($file, $person, FILE_APPEND | LOCK_EX);
 
 if(!isset($session_user)){
 mysqli_close($con); // Closing Connection
-header('Location: index.html'); // Redirecting To Home Page
+header('Location: index.php'); // Redirecting To Home Page
 }
 ?>
