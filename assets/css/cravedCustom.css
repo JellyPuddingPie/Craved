@@ -24,4 +24,5 @@ background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.5));
 }
 .nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
     background-color: #FBC473;
+	    cursor: pointer;
 }

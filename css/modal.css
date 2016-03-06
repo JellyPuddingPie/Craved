@@ -11,7 +11,7 @@
 #modal .content {
     height: 620px;
     margin-top: 20px;
-    padding-top:50px;
+	box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.49);
    
 }
 
@@ -31,7 +31,8 @@
 }
 #modal .content, #modal .titel{
     background-color:rgba(245,245,245,0.90);
-    margin-top: 20px;
+    margin-top: 10px;
+	border:1px solid black;
 }
 
 #modal .titel .titel_content{

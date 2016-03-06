@@ -38,6 +38,16 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/upload/index.php">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/upload/upload.php">
+          <value>
+            <set />
+          </value>
+        </entry>
       </map>
     </option>
   </component>

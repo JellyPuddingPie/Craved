@@ -26,11 +26,7 @@ $.fn.openModal = function($page, $css, $titel){
     //creëer de omringende html
         $modal = $('<div id="modal">'+
             '<div class="modalBox">' +
-            '<div class="titel"><div class="titel_content"><h1>' + $titel + '</h1></div>' +
-            '<div class="closeBtnDiv">' +
-            '<button onclick="$(this).closeModal()">X</button>' +
-            '</div>' +  // einde close btn div
-            '</div>'+ //titel sectie einde
+            '<button onclick="$(this).closeModal()" style="font-family:Tahoma;">Close</button>' +
             '<div class="content">'+
             '</div>' +
             '</div>'+

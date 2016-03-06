@@ -59,7 +59,7 @@
             ].join(' ');
           }
 
-          infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br>' + place.website);
+          infowindow.setContent('<div><strong>I ate this dish at ' + place.name + '</strong><br>' + address + '<br>' + place.website);
 		  document.getElementById("address").value = (place.address_components[1] && place.address_components[1].short_name || '');
 		  document.getElementById("restname").value = place.name;
 		  document.getElementById("nr").value = (place.address_components[0] && place.address_components[0].short_name || '') ;
@@ -90,7 +90,7 @@
                 reader.onload = function (e) {
                     $('#preview')
                         .attr('src', e.target.result)
-                        .width(150)
+                        .height(150)
 						.css('visibility','visible');
 						
                 };
