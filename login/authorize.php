@@ -1,5 +1,6 @@
 <?php
 session_start();
+include('datafunctions.php');
 $error='';
 $servername = "46.21.173.249";
 $username = "bjorngv155";
@@ -9,18 +10,10 @@ $dbh = new PDO('mysql:host=46.21.173.249;dbname=bjorngv155_Craved', $username, $
 
 
 if(isset($_POST['login'])){
-
-
-
-
 	if (empty($_POST['user']) || empty($_POST['pass'])) {
 		$error = 'Username or Password is invalid!';
 	}
-
 	else{
-
-
-
 		$user = $_POST['user'];
 		$pass = $_POST['pass'];
 
@@ -126,4 +119,55 @@ if(isset($_POST['signup'] )){
 	}
 	$dbh=null;
 }
+if(isset($_REQUEST['provider'] )) {
+	$provider_name = $_REQUEST["provider"];
+
+	try
+	{
+		// inlcude HybridAuth library
+		// change the following paths if necessary
+		$config   =  '../library/config.php';
+
+		require_once( "../library/Hybrid/Auth.php" );
+
+		// initialize Hybrid_Auth class with the config file
+		$hybridauth = new Hybrid_Auth( $config );
+
+		// try to authenticate with the selected provider
+		$adapter = $hybridauth->authenticate( $provider_name );
+
+		// then grab the user profile
+		$user_profile = $adapter->getUserProfile();
+	}
+
+		// something went wrong?
+	catch( Exception $e )
+	{
+		echo $e->getMessage();
+	}
+
+	// check if the current user already have authenticated using this provider before
+	$user_exist = get_user_by_provider_and_id( $provider_name, $user_profile->identifier );
+
+	// if the used didn't authenticate using the selected provider before
+	// we create a new entry on database.users for him
+	if( ! $user_exist )
+	{
+		create_new_hybridauth_user(
+			$user_profile->firstName . $user_profile->lastName,
+			$user_profile->firstName,
+			$user_profile->lastName,
+			$user_profile->email,
+			$provider_name,
+			$user_profile->identifier
+		);
+	}
+
+	// set the user as connected and redirect him
+	$_SESSION["user_connected"] = true;
+	$_SESSION['first_name'] = $user_profile->firstName;
+
+	header("Location: http://localhost/craved/cravedApp.php");
+}
+
 ?>

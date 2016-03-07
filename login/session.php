@@ -27,8 +27,8 @@ file_put_contents($file, $person, FILE_APPEND | LOCK_EX);
 
 //$login_session =$row["user_login_naam"];
 
-if(!isset($session_user)){
+if(!(isset($session_user) && isset($session_firstname))){
 mysqli_close($con); // Closing Connection
-header('Location: index.html'); // Redirecting To Home Page
+header('Location: index.php'); // Redirecting To Home Page
 }
 ?>

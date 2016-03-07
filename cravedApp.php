@@ -18,8 +18,8 @@ $user_id = $session_user_id;
         
          <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/css/cravedCustom.css"/>
-		<link rel="stylesheet" href="css/slides.css"/>
-		<link rel="stylesheet" href="css/modal.css"/>
+		<link rel="stylesheet" href="assets/css/slides.css"/>
+		<link rel="stylesheet" href="assets/css/modal.css"/>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>

@@ -30,7 +30,7 @@ include('../cravedApp.php');
 	
 	<input type="hidden" name="site" id="site">
 	<br/>
-	   <input type="text" name="userid" id="userid" value=<?php echo $user_id; ?>>
+	   <input type="hidden" name="userid" id="userid" value=<?php echo $user_id; ?>>
 	   <br/>
 	<label>How much did it cost?</label><br/>
 	<input type="text" name="prijs" id="prijs" placeholder="price"><span style= "font-size: 2em; margin-left: 10px;">€</span>

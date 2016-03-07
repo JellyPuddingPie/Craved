@@ -15,32 +15,32 @@ $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
 if(isset($_POST["upload"])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
-        $uploadOk = 1;
-    } else {
-        $uploadOk = 0;
-    }
+	$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+	if($check !== false) {
+		$uploadOk = 1;
+	} else {
+		$uploadOk = 0;
+	}
 }
 // Check if file already exists
 if (file_exists($target_file)) {
-    $uploadOk = 0;
+	$uploadOk = 0;
 }
 // Check file size
 if ($_FILES["fileToUpload"]["size"] > 500000) {
-    $uploadOk = 0;
+	$uploadOk = 0;
 }
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
-    $uploadOk = 0;
+	&& $imageFileType != "gif" ) {
+	$uploadOk = 0;
 }
 
 if(isset($_POST['etenstype'])){
-		 $etenstype = $_POST['etenstype'];
-	 }else{
-		 $uploadOk = 0;
-	 }
+	$etenstype = $_POST['etenstype'];
+}else{
+	$uploadOk = 0;
+}
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
 // if everything is ok, try to upload file
@@ -48,23 +48,23 @@ if ($uploadOk == 0) {
 	$city = $_POST["city"];
 	$site = $_POST["site"];
 	$user_id = $_POST["userid"];
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-		
-		
+	if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+
+
 		$stmt1 = $dbh->prepare("SELECT restaurant_id, naam FROM restaurants WHERE naam=?");
 		$stmt1->bindParam(1,$_POST["restname"]);
 		$stmt1->execute();
 		$row = $stmt1->fetch();
 		$row_count = $stmt1->rowCount();
-		
 
-		
+
+
 		$prijs = $_POST["prijs"];
-		
+
 		if($row_count > 0){
 			//restaurant ID uithalen
 			$rest_id = $row['restaurant_id'];
-			
+
 			//nieuwe foto in DB toevoegen
 			$stmt = $dbh->prepare("INSERT INTO fotos (media_extensie, media_prijsklasse, user_id, restaurant_id)  VALUES (?,?,?,?)");
 			$stmt->bindParam(1,$ext);
@@ -72,23 +72,23 @@ if ($uploadOk == 0) {
 			$stmt->bindParam(3,$user_id);
 			$stmt->bindParam(4,$rest_id);
 			$stmt->execute();
-			
+
 			//etenstypes per foto in DB toevoegen
 			foreach ($etenstype as $etenstypes=>$value)
-				{
-					$stmt2 = $dbh->prepare("INSERT INTO etenstype_media (media_id, type_id)  VALUES (?,?)");
-					$stmt2->bindParam(1,$id);
-					$stmt2->bindParam(2,$value);
-					$stmt2->execute();
-				}
-			
+			{
+				$stmt2 = $dbh->prepare("INSERT INTO etenstype_media (media_id, type_id)  VALUES (?,?)");
+				$stmt2->bindParam(1,$id);
+				$stmt2->bindParam(2,$value);
+				$stmt2->execute();
+			}
+
 		}else{
 			//nieuwe ID voor restaurant vinden
 			$stmt3 = $dbh->prepare('SELECT restaurant_id FROM restaurants ORDER BY restaurant_id DESC LIMIT 1');
 			$stmt3->execute();
 			$row = $stmt3->fetch();
 			$rest_id = $row['restaurant_id'] + 1;
-			
+
 			//nieuw restaurant in DB toevoegen
 			$stmt4 = $dbh->prepare("INSERT INTO restaurants (naam, straat, huisnr, plaats, website)  VALUES (?,?,?,?,?)");
 			$stmt4->bindParam(1,$_POST["restname"]);
@@ -97,7 +97,7 @@ if ($uploadOk == 0) {
 			$stmt4->bindParam(4,$city);
 			$stmt4->bindParam(5,$site);
 			$stmt4->execute();
-			
+
 			//nieuwe foto in DB toevoegen
 			$stmt = $dbh->prepare("INSERT INTO fotos (media_extensie, media_prijsklasse, user_id, restaurant_id)  VALUES (?,?,?,?)");
 			$stmt->bindParam(1,$ext);
@@ -106,21 +106,21 @@ if ($uploadOk == 0) {
 			$stmt->bindParam(4,$rest_id);
 			$stmt->execute();
 			//etenstypes per foto in DB toevoegen
-			
+
 			foreach ($etenstype as $etenstypes=>$value)
-				{
-					$stmt = $dbh->prepare("INSERT INTO etenstype_media (media_id, type_id)  VALUES (?,?)");
-					$stmt->bindParam(1,$id);
-					$stmt->bindParam(2,$value);
-					$stmt->execute();
-				}
-				
+			{
+				$stmt = $dbh->prepare("INSERT INTO etenstype_media (media_id, type_id)  VALUES (?,?)");
+				$stmt->bindParam(1,$id);
+				$stmt->bindParam(2,$value);
+				$stmt->execute();
+			}
+
 		}
-		
+
 		$dbh=null;
 		header('Location: ../cravedApp.php');
-		
-    } else {
-    }
+
+	} else {
+	}
 }
 ?>
